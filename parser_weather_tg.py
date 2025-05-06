@@ -1,5 +1,6 @@
 import time
-
+import os
+from dotenv import load_dotenv
 import aiogram.enums
 from aiogram import Bot, Dispatcher,types,F
 from aiogram.filters import Command
@@ -10,8 +11,8 @@ from bs4 import BeautifulSoup
 import requests
 from translate import Translator
 
-
-BOT_TOKEN = '7295540178:AAF9W6cL5XKLf1M6dKXCGk1nt5jaAUkmGl0'
+load_dotenv()
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot = Bot(token=BOT_TOKEN)
 storage = MemoryStorage()
 dp = Dispatcher(storage=storage)
